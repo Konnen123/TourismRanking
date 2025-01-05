@@ -4,6 +4,7 @@ from sklearn.neighbors import KNeighborsRegressor
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 
 def create_ranking(country):
@@ -61,6 +62,9 @@ def create_ranking(country):
 
 
 if __name__ == '__main__':
+    if not os.path.exists('figures'):
+        os.makedirs('figures')
+
     create_ranking('China')
     create_ranking('France')
     create_ranking('Brazil')
